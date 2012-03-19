@@ -1,0 +1,13 @@
+name: J2MC_Trust
+main: to.joe.j2mc.trust.J2MC_trust
+version: 0.0prealpha
+website: http://forums.joe.to
+author: J2 Minecraft Plugin Team
+description: Trusted module
+commands:
+  register:
+    description: link account
+  trust:
+    description: gives some basic help to get trusted
+  amitrusted:
+    description: are you trusted?
