@@ -21,7 +21,7 @@ public class AmITrustedCommand extends MasterCommand{
                 player.sendMessage(ChatColor.AQUA + "You are trusted! Yay!");
             } else {
                 player.sendMessage(ChatColor.AQUA + "You are not trusted. Get it!");
-                player.sendMessage(ChatColor.AQUA + "Visit http://forums.joe.to/trust to get trusted");
+                player.sendMessage(ChatColor.AQUA + "Visit http://forums.joe.to/viewtopic.php?f=226&t=63434 to get trusted");
             }
         }
     }
