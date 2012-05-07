@@ -21,8 +21,7 @@ public class TrustCommand extends MasterCommand{
                 player.sendMessage(ChatColor.AQUA + "What are you doing reading this? You're already trusted :D");
             }else{
                 player.sendMessage(ChatColor.AQUA + "Trusted status gives special privileges");
-                player.sendMessage(ChatColor.AQUA + "You want it? Visit our forums Minecraft section");
-                player.sendMessage(ChatColor.AQUA + "http://forums.joe.to");
+                player.sendMessage(ChatColor.AQUA + "You want it? Visit http://forums.joe.to/viewtopic.php?f=226&t=63434");
             }
         }
     }
