@@ -40,6 +40,7 @@ public class RegisterCommand extends MasterCommand{
                 ResultSet rs2 = ps2.executeQuery();
                 //Verify their authcode is correct
                 if(rs2.next()){
+                    /*
                     //Check if user is on grandfather table
                     PreparedStatement prep = J2MC_Manager.getMySQL().getFreshPreparedStatementHotFromTheOven("SELECT * FROM grandfatherlist WHERE name=?");
                     prep.setString(1, player.getName());
@@ -61,19 +62,21 @@ public class RegisterCommand extends MasterCommand{
                         insertIntoVouches.setInt(5, 3);
                         insertIntoVouches.executeUpdate();
                         J2MC_Manager.getPermissions().addPermanentFlag(player, 't');
-                        PreparedStatement vipeFromGrandfather = J2MC_Manager.getMySQL().getFreshPreparedStatementHotFromTheOven("DELETE FROM grandfatherlist WHERE name=?");
-                        vipeFromGrandfather.setString(1, player.getName());
-                        vipeFromGrandfather.executeUpdate();
+                        //FUCK YOU MBAXTER
+                        PreparedStatement wipeFromGrandfather = J2MC_Manager.getMySQL().getFreshPreparedStatementHotFromTheOven("DELETE FROM grandfatherlist WHERE name=?");
+                        wipeFromGrandfather.setString(1, player.getName());
+                        wipeFromGrandfather.executeUpdate();
                         player.sendMessage(ChatColor.DARK_AQUA + "Congratulations! Your account has been linked.");
                         return;
-                    }else{ //If user isn't on grandfather table
+                        
+                    }else{*/ //If user isn't on grandfather table
                         PreparedStatement updateUsersTable = J2MC_Manager.getMySQL().getFreshPreparedStatementHotFromTheOven("UPDATE minecraftusers SET minecraft_username=? WHERE authcode=?");
                         updateUsersTable.setString(1, player.getName());
                         updateUsersTable.setString(2, authcode);
                         updateUsersTable.executeUpdate();
                         player.sendMessage(ChatColor.DARK_AQUA + "Congratulations! Your account has been linked.");
                         return;
-                    }
+                    //}
                 }else{
                     player.sendMessage(ChatColor.DARK_AQUA + "Incorrect key!");
                 }
