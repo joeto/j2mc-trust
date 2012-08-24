@@ -82,8 +82,6 @@ public class RegisterCommand extends MasterCommand{
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
             }
         }
     }
