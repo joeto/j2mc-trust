@@ -11,3 +11,5 @@ commands:
     description: gives some basic help to get trusted
   amitrusted:
     description: are you trusted?
+  trustreq:
+    description: Request trusted help or put yourself forward to help.
