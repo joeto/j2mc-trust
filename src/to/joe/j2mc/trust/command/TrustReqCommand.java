@@ -7,15 +7,12 @@ import org.bukkit.entity.Player;
 import to.joe.j2mc.core.J2MC_Core;
 import to.joe.j2mc.core.J2MC_Manager;
 import to.joe.j2mc.core.command.MasterCommand;
-import to.joe.j2mc.trust.J2MC_trust;
+import to.joe.j2mc.trust.J2MC_Trust;
 
-public class TrustReqCommand extends MasterCommand {
+public class TrustReqCommand extends MasterCommand<J2MC_Trust> {
 
-    J2MC_trust plugin;
-
-    public TrustReqCommand(J2MC_trust trust) {
+    public TrustReqCommand(J2MC_Trust trust) {
         super(trust);
-        this.plugin = trust;
     }
 
     @Override

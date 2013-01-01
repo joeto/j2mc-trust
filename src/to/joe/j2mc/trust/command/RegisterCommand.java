@@ -10,18 +10,18 @@ import org.bukkit.entity.Player;
 
 import to.joe.j2mc.core.J2MC_Manager;
 import to.joe.j2mc.core.command.MasterCommand;
-import to.joe.j2mc.trust.J2MC_trust;
+import to.joe.j2mc.trust.J2MC_Trust;
 
-public class RegisterCommand extends MasterCommand{
+public class RegisterCommand extends MasterCommand<J2MC_Trust> {
 
-    public RegisterCommand(J2MC_trust trust) {
+    public RegisterCommand(J2MC_Trust trust) {
         super(trust);
     }
 
     @Override
     public void exec(CommandSender sender, String commandName, String[] args, Player player, boolean isPlayer) {
-        if (isPlayer){
-            if(args.length!=1 || args[0].length()!=5){
+        if (isPlayer) {
+            if (args.length != 1 || args[0].length() != 5) {
                 player.sendMessage(ChatColor.DARK_AQUA + "Usage: /register key");
                 player.sendMessage(ChatColor.DARK_AQUA + "Get your key: http://forums.joe.to/trust");
                 return;
@@ -31,7 +31,7 @@ public class RegisterCommand extends MasterCommand{
                 PreparedStatement ps = J2MC_Manager.getMySQL().getFreshPreparedStatementHotFromTheOven("SELECT * FROM minecraftusers WHERE minecraft_username <>\"\" AND authcode=?");
                 ps.setString(1, authcode);
                 ResultSet rs = ps.executeQuery();
-                if(rs.next()){
+                if (rs.next()) {
                     player.sendMessage("Your account is already linked!");
                     return;
                 }
@@ -39,7 +39,7 @@ public class RegisterCommand extends MasterCommand{
                 ps2.setString(1, authcode);
                 ResultSet rs2 = ps2.executeQuery();
                 //Verify their authcode is correct
-                if(rs2.next()){
+                if (rs2.next()) {
                     /*
                     //Check if user is on grandfather table
                     PreparedStatement prep = J2MC_Manager.getMySQL().getFreshPreparedStatementHotFromTheOven("SELECT * FROM grandfatherlist WHERE name=?");
@@ -69,15 +69,15 @@ public class RegisterCommand extends MasterCommand{
                         player.sendMessage(ChatColor.DARK_AQUA + "Congratulations! Your account has been linked.");
                         return;
                         
-                    }else{*/ //If user isn't on grandfather table
-                        PreparedStatement updateUsersTable = J2MC_Manager.getMySQL().getFreshPreparedStatementHotFromTheOven("UPDATE minecraftusers SET minecraft_username=? WHERE authcode=?");
-                        updateUsersTable.setString(1, player.getName());
-                        updateUsersTable.setString(2, authcode);
-                        updateUsersTable.executeUpdate();
-                        player.sendMessage(ChatColor.DARK_AQUA + "Congratulations! Your account has been linked.");
-                        return;
+                    }else{*///If user isn't on grandfather table
+                    PreparedStatement updateUsersTable = J2MC_Manager.getMySQL().getFreshPreparedStatementHotFromTheOven("UPDATE minecraftusers SET minecraft_username=? WHERE authcode=?");
+                    updateUsersTable.setString(1, player.getName());
+                    updateUsersTable.setString(2, authcode);
+                    updateUsersTable.executeUpdate();
+                    player.sendMessage(ChatColor.DARK_AQUA + "Congratulations! Your account has been linked.");
+                    return;
                     //}
-                }else{
+                } else {
                     player.sendMessage(ChatColor.DARK_AQUA + "Incorrect key!");
                 }
             } catch (SQLException e) {
@@ -85,5 +85,5 @@ public class RegisterCommand extends MasterCommand{
             }
         }
     }
-    
+
 }

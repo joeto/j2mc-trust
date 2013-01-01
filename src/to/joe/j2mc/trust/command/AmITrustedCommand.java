@@ -6,11 +6,11 @@ import org.bukkit.entity.Player;
 
 import to.joe.j2mc.core.J2MC_Manager;
 import to.joe.j2mc.core.command.MasterCommand;
-import to.joe.j2mc.trust.J2MC_trust;
+import to.joe.j2mc.trust.J2MC_Trust;
 
-public class AmITrustedCommand extends MasterCommand{
-    
-    public AmITrustedCommand(J2MC_trust trust) {
+public class AmITrustedCommand extends MasterCommand<J2MC_Trust> {
+
+    public AmITrustedCommand(J2MC_Trust trust) {
         super(trust);
     }
 
