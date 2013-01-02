@@ -6,10 +6,30 @@ author: J2 Minecraft Plugin Team
 description: Trusted module
 commands:
   register:
-    description: link account
+    description: Link your forum and Minecraft accounts
+    permission: j2mc.trust.register
+    permission-message: You may not link your forum and Minecraft accounts
   trust:
-    description: gives some basic help to get trusted
+    description: Basic help to get trusted
+    permission: j2mc.trust.trust
+    permission-message: You may not receive trusted help
   amitrusted:
-    description: are you trusted?
+    description: Are you trusted?
+    permission: j2mc.trust.amitrusted
+    permission-message: You may not know if you are trusted
   trustreq:
-    description: Request trusted help or put yourself forward to help.
+    description: Request help from a trusted user
+    permission: j2mc.trust.trustreq
+    permission-message: You may not request help from a trusted user
+permissions:
+  j2mc.trust.register:
+    default: true
+    description: Allows linking of forum and Minecraft accounts
+  j2mc.trust.trust:
+    default: true
+    description: Allows user to get basic help to get trusted
+  j2mc.trust.amitrusted:
+    default: true
+    description: Allows user to view trusted status
+  j2mc.trust.trustreq:
+    description: Allows user to request help from a trusted user
