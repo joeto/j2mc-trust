@@ -8,9 +8,9 @@ import to.joe.j2mc.core.J2MC_Manager;
 import to.joe.j2mc.core.command.MasterCommand;
 import to.joe.j2mc.trust.J2MC_Trust;
 
-public class TrustCommand extends MasterCommand<J2MC_Trust> {
+public class TrustedCommand extends MasterCommand<J2MC_Trust> {
 
-    public TrustCommand(J2MC_Trust trust) {
+    public TrustedCommand(J2MC_Trust trust) {
         super(trust);
     }
 

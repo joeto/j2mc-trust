@@ -9,7 +9,7 @@ commands:
     description: Link your forum and Minecraft accounts
     permission: j2mc.trust.register
     permission-message: You may not link your forum and Minecraft accounts
-  trust:
+  trusted:
     description: Basic help to get trusted
     permission: j2mc.trust.trust
     permission-message: You may not receive trusted help
